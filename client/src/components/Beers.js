@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Beer from "./Beer";
 import BeerForm from "./BeerForm";
 import BorderedDiv from "./BorderedDiv"
@@ -27,14 +28,18 @@ const Beers = () => {
       return <p>No Beers</p>;
     }
     return beers.map((beer) => {
-      return <Beer key={beer.id} {...beer} />;
+      return (
+        <div>
+          <Beer key={beer.id} {...beer} />
+          <Link to={`/beers/${beer.id}`}>View this Beer</Link>
+        </div>);
     });
   };
   // Following James's example to color coordinate my items / returning my Beer components
   return (
     <BorderedDiv color="goldenrod">
       <h1>Beers Listed Below</h1>
-      <BeerForm addBeer={addBeer}/>
+      <BeerForm addBeer={addBeer} />
       {renderBeers()}
     </BorderedDiv>
   );
