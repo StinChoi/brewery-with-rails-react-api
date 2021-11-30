@@ -1,6 +1,6 @@
 class Api::BeersController < ApplicationController
   before_action :set_beer, only: [:show, :destroy, :update]
-
+# following James's example
   # get /api/beers
     def index
       render json: Beer.all

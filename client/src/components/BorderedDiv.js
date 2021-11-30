@@ -1,11 +1,12 @@
 import React from "react";
-
+// made a seperate file to make code cleaner
+// setting up up some style and following James's example
 const BorderedDiv = (props) => {
-  const borderColor = props.color ? props.color : "grey";
+  const borderColor = props.color ? props.color : "whitesmoke";
   return (
     <div
       style={{
-        border: `3px solid ${borderColor}`,
+        border: `2px solid ${borderColor}`,
         margin: "10px",
         padding: "5px",
       }}

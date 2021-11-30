@@ -1,6 +1,7 @@
 import React from "react";
 import BorderedDiv from "./BorderedDiv";
-
+// Following James's example
+// setting up a bordered div to re-call it in another file to help with style
 const Beer = (props) => {
   return (
     <BorderedDiv color="black">

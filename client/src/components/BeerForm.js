@@ -10,22 +10,22 @@ const BeerForm = () => {
     console.log({ name, abv });
   };
   return (
-    <BorderedDiv color="blue">
+    <BorderedDiv color="black">
       <form onSubmit={handleSubmit}>
-        <p>name</p>
+        <p>Name</p>
         <input
           required
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <p>abv</p>
+        <p>Abv</p>
         <input
           type="number"
           value={abv}
           onChange={(e) => setAbv(e.target.value)}
 
         />
-        <button type="submit">Add</button>
+        <button type="enter">Add</button>
       </form>
     </BorderedDiv>
   );
