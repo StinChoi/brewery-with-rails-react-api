@@ -1,13 +1,23 @@
+import axios from "axios";
 import React, { useState } from "react";
 import BorderedDiv from "./BorderedDiv";
 
-const BeerForm = () => {
+const BeerForm = (props) => {
+  const {addBeer} = props;
   const [name, setName] = useState("");
   const [abv, setAbv] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submit Clicked");
-    console.log({ name, abv });
+    // console.log("Submit Clicked");
+    // console.log({ name, abv });
+    const newBeer = {
+      name:name,
+      abv:abv,
+    };
+    let result = await axios.post("/api/beers", newBeer)
+    addBeer(result.data);
+    setName("");
+    setAbv("");
   };
   return (
     <BorderedDiv color="black">

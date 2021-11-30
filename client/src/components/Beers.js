@@ -16,6 +16,11 @@ const Beers = () => {
     let response = await axios.get("/api/beers");
     setBeers(response.data);
   };
+  // add beer to ui
+  const addBeer = (beer) => {
+    setBeers([...beers, beer]);
+  };
+
   // render method
   const renderBeers = () => {
     if (beers.length === 0) {
@@ -29,7 +34,7 @@ const Beers = () => {
   return (
     <BorderedDiv color="goldenrod">
       <h1>Beers Listed Below</h1>
-      <BeerForm />
+      <BeerForm addBeer={addBeer}/>
       {renderBeers()}
     </BorderedDiv>
   );
