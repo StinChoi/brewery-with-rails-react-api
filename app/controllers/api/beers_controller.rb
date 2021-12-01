@@ -32,7 +32,7 @@ class Api::BeersController < ApplicationController
   
   # delete /api/beers/:id
     def destroy 
-      render json: @beer
+      render json: @beer.destroy
     end
   
     private
