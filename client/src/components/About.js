@@ -24,8 +24,7 @@ const About = () => {
       <h1>About Beer</h1>
       <p>{beer.name}</p>
       <h3>Edit Beer</h3>
-      {/* <BeerForm id={beer.id} name={beer.name} abv={beer.abv} updateBeer={updateBeer} /> */}
-      <BeerForm id={beer.id} name={"y"} abv={beer.abv} updateBeer={updateBeer} />
+      {beer.name ? <BeerForm id={beer.id} name={beer.name} abv={beer.abv} updateBeer={updateBeer} /> : <p>Loading</p>}
     </div>
   )
 };

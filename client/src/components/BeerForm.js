@@ -4,7 +4,7 @@ import BorderedDiv from "./BorderedDiv";
 
 const BeerForm = (props) => {
   const { addBeer, id, name: oldName, abv: oldAbv, updateBeer } = props;
-  const [name, setName] = useState(oldName ? oldName : "x");
+  const [name, setName] = useState(oldName ? oldName : "");
   const [abv, setAbv] = useState(oldAbv ? oldAbv : "");
   const handleSubmit = async (e) => {
     e.preventDefault();
